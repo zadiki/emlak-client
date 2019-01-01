@@ -27,8 +27,9 @@ class TopNavBar extends Component {
   }
 
   toggle() {
+    const {isOpen} =this.state;
     this.setState({
-      isOpen: !this.state.isOpen
+      isOpen: !isOpen
     });
   }
 
@@ -40,6 +41,7 @@ class TopNavBar extends Component {
 
   render() {
     const { isAuthenticated, user } = this.props;
+    const {isOpen }=this.state;
     const IsAuthenticatedNavBar = () => {
       if (isAuthenticated) {
         return (
@@ -99,7 +101,7 @@ class TopNavBar extends Component {
             />
           </NavbarBrand>
           <NavbarToggler onClick={this.toggle} />
-          <Collapse isOpen={this.state.isOpen} navbar>
+          <Collapse isOpen={isOpen} navbar>
             <Nav className="mr-auto" navbar>
               <NavItem>
                 <NavLink href="/">Home</NavLink>
@@ -117,7 +119,8 @@ class TopNavBar extends Component {
 
 TopNavBar.propTypes = {
   logout: PropTypes.func.isRequired,
-  user: PropTypes.shape().isRequired
+  user: PropTypes.shape().isRequired,
+  isAuthenticated:PropTypes.bool.isRequired
 };
 
 const mapStatetoProps = state => ({
