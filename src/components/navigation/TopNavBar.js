@@ -68,7 +68,7 @@ class TopNavBar extends Component {
                   <NavLink href="/">My account</NavLink>
                 </DropdownItem>
                 <DropdownItem>
-                  <NavLink href="/">Logout</NavLink>
+                  <NavLink href="/" onClick={this.logoutLinkClicked}>Logout</NavLink>
                 </DropdownItem>
               </DropdownMenu>
             </UncontrolledDropdown>
@@ -77,10 +77,10 @@ class TopNavBar extends Component {
       }
       return (
         <Fragment>
-          <NavItem>
+          <NavItem className="active d-none d-block d-sm-none">
             <NavLink href="/">SignUp</NavLink>
           </NavItem>
-          <NavItem> /
+          <NavItem className="active d-none d-block d-sm-none">/
             <NavLink href="/">Login</NavLink>
           </NavItem>
         </Fragment>
