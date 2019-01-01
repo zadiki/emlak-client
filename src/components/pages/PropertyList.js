@@ -7,9 +7,15 @@ import PropertyCard from '../property/PropertyCard';
 const PropertyList = props => {
   const { properties } = props;
   const propertyCardList = properties.map(property => (
-    <Link to={`/property/${property.id}`} key={property.id}>
-      <PropertyCard  property={property} />
-    </Link>
+    <div
+      className="col-6 col-xs-6 col-sm-4 col-lg-3 col-md-4 col-xl-2"
+      style={{ marginBottom: '1rem' }}
+      key={property.id}
+    >
+      <Link to={`/property/${property.id}`}>
+        <PropertyCard property={property} />
+      </Link>
+    </div>
   ));
   return (
     <div className="container-fluid">

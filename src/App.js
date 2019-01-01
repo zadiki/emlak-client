@@ -5,12 +5,10 @@ import Router from './router/Router';
 import store from './Store';
 
 const App = () => (
-  <div className="container-fluid">
-    <BrowserRouter>
-      <Provider store={store}>
-        <Router />
-      </Provider>
-    </BrowserRouter>
-  </div>
+  <BrowserRouter>
+    <Provider store={store}>
+      <Router />
+    </Provider>
+  </BrowserRouter>
 );
 export default App;

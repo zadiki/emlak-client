@@ -1,18 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const PropertyCard = ({property,...rest}) => (
-  <div
-    className="col-6 col-xs-6 col-sm-4 col-lg-3 col-md-4 col-xl-2"
-    style={{ marginBottom: '1rem' }}
-  >
+const PropertyCard = ({ property, ...rest }) => (
+ 
     <div className="card rounded-0 property-card">
-        <img
-          className="card-img-top rounded-0"
-          style={{ height: '10em' }}
-          src={property.ImageUrl}
-          alt="Card cap"
-        />
+      <img
+        className="card-img-top rounded-0"
+        style={{ height: '10em' }}
+        src={property.ImageUrl}
+        alt="Card cap"
+      />
       <div className="bottom-wrap m-0 bg-transparent">
         <span className="ml-1  text-primary">{property.SaleOrNot}</span>
         <div className="ml-1">
@@ -47,27 +44,26 @@ const PropertyCard = ({property,...rest}) => (
         </div>
       </div>
     </div>
-  </div>
 );
 PropertyCard.propTypes = {
   property: PropTypes.shape({
-    id:PropTypes.string.isRequired,
-    Category:PropTypes.string.isRequired,
-    SaleOrNot:PropTypes.string.isRequired,
-    Price:PropTypes.string.isRequired,
-    Address:PropTypes.string.isRequired,
-    ImageUrl:PropTypes.string.isRequired,
-    Workspace:PropTypes.string,
-    Bathroom:PropTypes.string,
-    Bedroom:PropTypes.string,
-    IsMasterAndSuite:PropTypes.bool,
-    Furnished:PropTypes.string,
-    Parking:PropTypes.string,
-    Bedsize:PropTypes.string,
-    NoOfBeds:PropTypes.string,
-    HotShower:PropTypes.string,
-    SwimmingPool:PropTypes.string,
-    BreakfastProvided:PropTypes.string
+    id: PropTypes.string.isRequired,
+    Category: PropTypes.string.isRequired,
+    SaleOrNot: PropTypes.string.isRequired,
+    Price: PropTypes.string.isRequired,
+    Address: PropTypes.string.isRequired,
+    ImageUrl: PropTypes.string.isRequired,
+    Workspace: PropTypes.string,
+    Bathroom: PropTypes.string,
+    Bedroom: PropTypes.string,
+    IsMasterAndSuite: PropTypes.bool,
+    Furnished: PropTypes.string,
+    Parking: PropTypes.string,
+    Bedsize: PropTypes.string,
+    NoOfBeds: PropTypes.string,
+    HotShower: PropTypes.string,
+    SwimmingPool: PropTypes.string,
+    BreakfastProvided: PropTypes.string
   }).isRequired
 };
 export default PropertyCard;

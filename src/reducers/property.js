@@ -1,4 +1,4 @@
-import { POST_PROPERTY, FETCH_PROPERTYLIST, FETCH_PROPERTY_DETAILS } from '../actions/types';
+import { POST_PROPERTY, FETCH_PROPERTYLIST, FETCH_PROPERTY_DETAILS,DELETE_PROPERTY_DETAILS} from '../actions/types';
 
 const initState = {
   property: {},
@@ -23,6 +23,8 @@ export default function property(state = initState, action) {
       return { ...state, isLoading: false };
     case FETCH_PROPERTY_DETAILS:
     return { ...state,property:action.payload};
+    case DELETE_PROPERTY_DETAILS:
+    return { ...state,property:{}};
     default:
       return state;
   }

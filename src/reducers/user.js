@@ -3,7 +3,7 @@ import { LOGIN, LOGOUT } from '../actions/types';
 const initState = {
   isAuthenticated: false,
   isLoading: true,
-  name: 'zadiki'
+  user:{}
 };
 
 export default function user(state = initState, action) {

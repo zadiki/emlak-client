@@ -13,8 +13,6 @@ import SideNavBar from '../navigation/SideNavBar';
 class Home extends Component {
   constructor(props) {
     super(props);
-
-    this.logoutLinkClicked = this.logoutLinkClicked.bind(this);
     this.onChange = this.onChange.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
   }
@@ -36,32 +34,29 @@ class Home extends Component {
     console.log(this.state);
   }
 
-  logoutLinkClicked(e) {
-    e.preventDefault();
-    const { logout } = this.props;
-    logout();
-  }
-
   render() {
     return (
       <Fragment>
-        <div className="container-fluid">
-          <TopNavBar logout={this.logoutLinkClicked} />
-          <main
-            className="container-fluid"
-            style={{ top: '3em', position: 'relative' }}
-          >
-            <SearchForm onChange={this.onChange} onSubmit={this.onSubmit} />
-            <div className="row h-100" style={{ marginTop: '0.1em' }}>
-              <div className="col-0  col-sm-2 col-md-3 col-lg-3 col-xl-2">
-                <SideNavBar />
-              </div>
-              <div className="col-12 col-sm-10 col-md-9 col-lg-9 col-xl-10">
-                <PropertyList />
+        <TopNavBar />
+        <main
+          className="container"
+          style={{ top: '1.5em', position: 'relative' }}
+        >
+          <SearchForm onChange={this.onChange} onSubmit={this.onSubmit} />
+          <div className="row h-100" style={{ marginTop: '0.1em' }}>
+            <div className="col-0  col-sm-2 col-md-3 col-lg-3 col-xl-2">
+              <SideNavBar />
+            </div>
+            <div className="col-12 col-sm-10 col-md-9 col-lg-9 col-xl-10">
+              <div className="container">
+                <div className="row">
+                  <PropertyList />
+                </div>
               </div>
             </div>
-          </main>
-        </div>
+          </div>
+        </main>
+
         <Footer />
       </Fragment>
     );
@@ -69,7 +64,6 @@ class Home extends Component {
 }
 
 Home.propTypes = {
-  logout: PropTypes.func.isRequired,
   fetchProperties: PropTypes.func.isRequired
 };
 
