@@ -19,7 +19,7 @@
     "redux": "^4.0.1",
     "redux-thunk": "^2.3.0"
   },
-  "proxy": "http://localhost:3001",
+  "proxy": "https://emlak-1533406597315.appspot.com",
   "devDependencies": {
     "eslint": "^5.6.0",
     "eslint-config-airbnb": "^17.1.0",

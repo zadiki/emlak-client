@@ -79,11 +79,9 @@ class TopNavBar extends Component {
       }
       return (
         <Fragment>
-          <NavItem className="active d-none d-block d-sm-none">
-            <NavLink href="/">SignUp</NavLink>
-          </NavItem>
-          <NavItem className="active d-none d-block d-sm-none">/
-            <NavLink href="/">Login</NavLink>
+          <NavItem className="active">
+            <NavLink className="float-left" href="/">SignUp</NavLink>
+            <NavLink className="float-right" href="/">Login</NavLink>
           </NavItem>
         </Fragment>
       );
