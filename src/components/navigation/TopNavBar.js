@@ -91,7 +91,7 @@ class TopNavBar extends Component {
         <div className="container">
           <NavbarBrand href="/">
             <img
-              src="images/company/logo.jpg"
+              src="/images/company/logo.jpg"
               width="30"
               height="30"
               className="d-inline-block"
