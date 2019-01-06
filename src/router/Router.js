@@ -5,9 +5,12 @@ import { withRouter } from 'react-router-dom';
 import LoginRouter from './LoginRouter';
 import HomeRouter from './HomeRouter';
 import PropertyRouter from './PropertyRouter';
+import SignUpRouter from './SignUpRouter';
 import LoginPage from '../components/pages/LoginPage';
+import SignUpPage from '../components/pages/SignUpPage';
 import Home from '../components/pages/Home';
 import Property from '../components/pages/Property';
+
 
 const Router = ({ location }) => (
   <div>
@@ -18,6 +21,7 @@ const Router = ({ location }) => (
       component={LoginPage}
     />
     <HomeRouter exact location={location} path="/" component={Home} />
+    <SignUpRouter exact location={location} path="/signup" component={SignUpPage} />
     <PropertyRouter
       exact
       location={location}

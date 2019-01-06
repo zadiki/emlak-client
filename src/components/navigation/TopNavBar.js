@@ -80,7 +80,7 @@ class TopNavBar extends Component {
       return (
         <Fragment>
           <NavItem className="active">
-            <NavLink className="float-left" href="/">SignUp</NavLink>
+            <NavLink className="float-left" href="/signup">SignUp</NavLink>
             <NavLink className="float-right" href="/login">Login</NavLink>
           </NavItem>
         </Fragment>
