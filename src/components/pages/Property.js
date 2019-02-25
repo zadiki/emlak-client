@@ -11,6 +11,8 @@ import SearchForm from '../forms/SearchForm';
 import ImageSlider from '../property/ImageSlider';
 import Map from '../maps/Map';
 import StreetView from '../maps/StreetView';
+import PropertyDetail from '../property/PropertyDetail';
+import UserDetail from '../user/UserDetail';
 
 const items = [
   {
@@ -110,8 +112,8 @@ class Property extends Component {
             <div className="col-5">
               <TabDisplays />
             </div>
-            <div className="col-4">property detail</div>
-            <div className="col-3">user info</div>
+            <div className="col-4 col-md-3 mb-1 d-none d-md-block"><PropertyDetail property={property}/></div>
+            <div className="col-3 "><UserDetail user={property.PostedBy}/></div>
           </div>
         </main>
         <Footer />

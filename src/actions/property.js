@@ -2,6 +2,7 @@ import apis from '../utils/apis';
 import {
   FETCH_PROPERTYLIST,
   FETCH_PROPERTY_DETAILS,
+  FETCH_USER_PROPERTIES,
   DELETE_PROPERTY_DETAILS
 } from './types';
 
@@ -13,6 +14,15 @@ export const fetchProperties = () => dispatch => {
     dispatch({
       type: FETCH_PROPERTYLIST,
       payload: data.propertylist
+    });
+  });
+};
+
+export const fetchUserProperties = (userId) => dispatch => {
+  apis.user.fetchUserProperties(userId).then(data => {
+    dispatch({
+      type: FETCH_USER_PROPERTIES,
+      payload: data
     });
   });
 };
