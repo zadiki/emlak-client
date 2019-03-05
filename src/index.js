@@ -7,21 +7,22 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './style/login.css';
 import './style/main.css';
 import store from './Store';
-import {userlogin,userlogout} from './actions/auth';
 import setAuthorizationHeader from './utils/setAuthorizationHeader';
 import apis from './utils/apis';
+import { loginSuccess } from './sagas/dispatcher';
 
-   if (localStorage.emlakJWT) {    
-        setAuthorizationHeader(localStorage.emlakJWT);
-        apis.user.fetchUserData().then(data=>{            
-            store.dispatch(userlogin(data));
-        }).catch(err=>store.dispatch(userlogout()));
-        
-    }else{
-        setAuthorizationHeader();
-        store.dispatch(userlogout());
-    }
-    
+if (localStorage.emlakJWT) {
+	setAuthorizationHeader(localStorage.emlakJWT);
+	apis.user
+		.fetchUserData()
+		.then(data => {
+			loginSuccess(data);
+		})
+		.catch(err => console.log(err.response.data));
+} else {
+	setAuthorizationHeader();
+	// store.dispatch(userlogout());
+}
 
 ReactDOM.render(<App />, document.getElementById('root'));
 

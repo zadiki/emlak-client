@@ -9,7 +9,7 @@
     "eslint-plugin-prettier": "^3.0.0",
     "jwt-decode": "^2.2.0",
     "prop-types": "^15.6.2",
-    "react": "^16.6.3",
+    "react": "^16.8.3",
     "react-dom": "^16.6.3",
     "react-google-maps": "^9.4.5",
     "react-icons": "^3.2.2",
@@ -20,6 +20,7 @@
     "reactstrap": "^6.5.0",
     "recompose": "^0.30.0",
     "redux": "^4.0.1",
+    "redux-saga": "^1.0.1",
     "redux-thunk": "^2.3.0"
   },
   "proxy": "http://localhost:3001",

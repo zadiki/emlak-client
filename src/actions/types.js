@@ -1,4 +1,6 @@
-export const LOGIN = 'LOGIN';
+export const LOGIN_REQUEST = 'LOGIN_REQUEST';
+export const LOGIN_SUCCESS = 'LOGIN_SUCCESS';
+export const LOGIN_FAIL = 'LOGIN_FAIL';
 export const LOGOUT = 'LOGOUT';
 export const FETCH_PROPERTY = 'FETCH_PROPERTY';
 export const FETCH_PROPERTYLIST = 'FETCH_PROPERTYLIST';
