@@ -67,7 +67,4 @@ Home.propTypes = {
   fetchProperties: PropTypes.func.isRequired
 };
 
-export default connect(
-  null,
-  { logout, fetchProperties }
-)(Home);
+export default connect(null,{ logout, fetchProperties })(Home);

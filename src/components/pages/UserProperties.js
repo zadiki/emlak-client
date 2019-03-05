@@ -6,35 +6,37 @@ import Footer from '../navigation/Footer';
 import { fetchUserProperties } from '../../actions/property';
 
 class UserProperties extends Component {
-  componentDidMount() {
-    const { userid } = this.props.match.params;
-    const { fetchUserProperties } = this.props;
-    fetchUserProperties(userid);
-  }
+	componentDidMount() {
+		// eslint-disable-next-line react/destructuring-assignment
+		const { userid } = this.props.match.params;
+		const { fetch } = this.props;
+		fetch(userid);
+	}
 
-  render() {
-    const { userid } = this.props.match.params;
+	render() {
+		// eslint-disable-next-line react/destructuring-assignment
+		const { userid } = this.props.match.params;
 
-    return (
-      <Fragment>
-        <TopNavBar />
-        {JSON.stringify(userid)}
-        <Footer />
-      </Fragment>
-    );
-  }
+		return (
+			<Fragment>
+				<TopNavBar />
+				{JSON.stringify(userid)}
+				<Footer />
+			</Fragment>
+		);
+	}
 }
 
 UserProperties.propTypes = {
-  match: PropTypes.shape({
-    params: PropTypes.shape({
-      userid: PropTypes.string.isRequired
-    }).isRequired
-  }).isRequired,
-  fetchUserProperties:PropTypes.func.isRequired
+	match: PropTypes.shape({
+		params: PropTypes.shape({
+			userid: PropTypes.string.isRequired
+		}).isRequired
+	}).isRequired,
+	fetch: PropTypes.func.isRequired
 };
 
 export default connect(
-  null,
-  { fetchUserProperties }
+	null,
+	{ fetch: fetchUserProperties }
 )(UserProperties);
