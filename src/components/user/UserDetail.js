@@ -29,7 +29,7 @@ const UserDetail = (props) => {
               type="button"
               className="list-group-item rounded-0 bg-light show-phone "
             >
-              contact 07055
+              {`Contact ${user.Phone}`}
             </button>
           </div>
           <div className="list-group border-0 mb-1 rounded-0 col-8">

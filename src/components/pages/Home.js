@@ -56,7 +56,6 @@ class Home extends Component {
             </div>
           </div>
         </main>
-
         <Footer />
       </Fragment>
     );

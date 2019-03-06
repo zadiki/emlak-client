@@ -1,32 +1,25 @@
-import apis from '../utils/apis';
 import {
 	FETCH_PROPERTYLIST,
-	FETCH_PROPERTY_DETAILS,
-	FETCH_USER_PROPERTIES
+	FETCH_PROPERTY,
+	FETCH_USER_PROPERTIES,
+	SEARCH_PROPERTY
 } from './types';
 
 export const fetchProperties = () => ({
 	type: FETCH_PROPERTYLIST
 });
 
-export const fetchUserProperties = userId => dispatch => {
-	apis.user.fetchUserProperties(userId).then(data => {
-		dispatch({
-			type: FETCH_USER_PROPERTIES,
-			payload: data
-		});
-	});
-};
+export const fetchUserProperties = userId => ({
+	type: FETCH_USER_PROPERTIES,
+	payload: userId
+});
 
-export const fetchPropertyDetail = id => dispatch => {
-	apis.property.fetchPropertyDetail(id).then(data => {
-		dispatch({
-			type: FETCH_PROPERTY_DETAILS,
-			payload: data
-		});
-	});
-};
+export const fetchPropertyDetail = id => ({
+	type: FETCH_PROPERTY,
+	payload: id
+});
 
-export const searchProperty = () => dispatch => {
-	console.log('searched');
-};
+export const searchProperty = query => ({
+	type: SEARCH_PROPERTY,
+	payload: query
+});

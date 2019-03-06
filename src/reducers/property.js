@@ -1,8 +1,7 @@
 import {
 	POST_PROPERTY,
 	FETCH_PROPERTYLIST_SUCCESS,
-	FETCH_PROPERTY_DETAILS,
-	FETCH_USER_PROPERTIES
+	FETCH_PROPERTY_SUCCESS
 } from '../actions/types';
 
 const initState = {
@@ -26,11 +25,8 @@ export default function property(state = initState, action) {
 			};
 		case POST_PROPERTY:
 			return { ...state, isLoading: false };
-		case FETCH_PROPERTY_DETAILS:
+		case FETCH_PROPERTY_SUCCESS:
 			return { ...state, property: action.payload };
-		case FETCH_USER_PROPERTIES:
-			console.log(action.payload);
-			return { ...state, properties: action.payload };
 		default:
 			return state;
 	}

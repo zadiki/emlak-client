@@ -1,19 +1,35 @@
 import { takeEvery, take, call, takeLatest } from 'redux-saga/effects';
 import {
-	propertyloadSuccess,
-	propertyloadFailure
+	propertiesloadSuccess,
+	propertiesloadFailure,
+	userPropertiesloadSuccess,
+	propertyloadSuccess
 } from '../dispatchers/propertydispatchers';
 import apis from '../../utils/apis';
 
 export function* fetchPropertiesWatcher() {
 	try {
 		const data = yield call(apis.property.fetchProperties);
-		yield call(propertyloadSuccess, data.propertylist);
+		yield call(propertiesloadSuccess, data.propertylist);
 	} catch (error) {
-		yield call(propertyloadFailure, error.response.data);
+		yield call(propertiesloadFailure, error.response.data);
 	}
 }
 
-export function* fetchPropertyWatcher() {
-	console.log('test1');
+export function* fetchUserPropertiesWatcher(action) {
+	try {
+		const data = yield call(apis.user.fetchUserProperties, action.payload);
+		yield call(userPropertiesloadSuccess, data.propertylist);
+	} catch (error) {
+		yield call(propertiesloadFailure, error.response.data);
+	}
+}
+
+export function* fetchPropertyWatcher(action) {
+	try {
+		const data = yield call(apis.property.fetchPropertyDetail, action.payload);
+		yield call(propertyloadSuccess, data);
+	} catch (error) {
+		yield call(propertiesloadFailure, error.response.data);
+	}
 }
