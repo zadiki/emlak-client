@@ -5,7 +5,6 @@ import {
 } from '../../actions/types';
 
 export function* propertyloadSuccess(properties) {
-	// yield put({ type: DELETE_PROPERTY_DETAILS });
 	yield put({ type: FETCH_PROPERTYLIST_SUCCESS, payload: properties });
 }
 export function* propertyloadFailure(error) {

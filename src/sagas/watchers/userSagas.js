@@ -1,5 +1,5 @@
 import { takeEvery, take, call, takeLatest } from 'redux-saga/effects';
-import { loginSuccess, loginFail } from '../dispatchers/userdispatcher';
+import { loginSuccess, loginFail, logout } from '../dispatchers/userdispatcher';
 import apis from '../../utils/apis';
 
 export function* loginWatcher(action) {
@@ -12,4 +12,7 @@ export function* loginWatcher(action) {
 	}
 }
 
-export function logoutWatcher() {}
+export function* logoutWatcher() {
+	localStorage.removeItem('emlakJWT');
+	yield call(logout);
+}

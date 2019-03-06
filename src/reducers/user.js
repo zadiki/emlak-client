@@ -1,4 +1,4 @@
-import { LOGIN_SUCCESS, LOGOUT } from '../actions/types';
+import { LOGIN_SUCCESS, LOGOUT_SUCCESS } from '../actions/types';
 
 const initState = {
 	isAuthenticated: false,
@@ -15,7 +15,7 @@ export default function user(state = initState, action) {
 				isLoading: false,
 				user: action.payload
 			};
-		case LOGOUT:
+		case LOGOUT_SUCCESS:
 			return { ...state, isAuthenticated: false, isLoading: false };
 		default:
 			return state;
