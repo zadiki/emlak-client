@@ -1,4 +1,9 @@
-import { LOGIN_SUCCESS, LOGOUT_SUCCESS } from '../actions/types';
+import {
+	LOGIN_SUCCESS,
+	LOGOUT_SUCCESS,
+	USER_REGISTER_FAIL,
+	USER_REGISTER_SUCCESS
+} from '../actions/types';
 
 const initState = {
 	isAuthenticated: false,
@@ -17,6 +22,14 @@ export default function user(state = initState, action) {
 			};
 		case LOGOUT_SUCCESS:
 			return { ...state, isAuthenticated: false, isLoading: false };
+		case USER_REGISTER_SUCCESS:
+			return {
+				...state,
+				registrationMessage: action.payload,
+				registration: true
+			};
+		case USER_REGISTER_FAIL:
+			return { ...state, registration: false };
 		default:
 			return state;
 	}

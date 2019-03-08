@@ -202,7 +202,9 @@ a:hover {
   bottom: 0;
   right: 0;
 }
-
+.has-errors{
+  background-color: crimson;
+}
 .loading:before {
   content: "";
   display: block;

@@ -1,5 +1,10 @@
 import { put } from 'redux-saga/effects';
-import { LOGIN_SUCCESS, LOGIN_FAIL, LOGOUT_SUCCESS } from '../../actions/types';
+import {
+	LOGIN_SUCCESS,
+	LOGIN_FAIL,
+	LOGOUT_SUCCESS,
+	USER_REGISTER_SUCCESS
+} from '../../actions/types';
 
 export function* loginSuccess(user) {
 	yield put({ type: LOGIN_SUCCESS, payload: user });
@@ -10,4 +15,7 @@ export function* loginFail(error) {
 }
 export function* logout() {
 	yield put({ type: LOGOUT_SUCCESS });
+}
+export function* userRegistrationSuccess() {
+	yield put({ type: USER_REGISTER_SUCCESS });
 }

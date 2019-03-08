@@ -4,9 +4,14 @@ import {
 	FETCH_PROPERTYLIST,
 	FETCH_USER_PROPERTIES,
 	FETCH_PROPERTY,
-	LOGOUT_REQUEST
+	LOGOUT_REQUEST,
+	USER_REGISTER
 } from '../actions/types';
-import { loginWatcher, logoutWatcher } from './watchers/userSagas';
+import {
+	loginWatcher,
+	logoutWatcher,
+	userRegisterWatcher
+} from './watchers/userSagas';
 import {
 	fetchPropertiesWatcher,
 	fetchPropertyWatcher,
@@ -19,4 +24,5 @@ export default function* rootSage() {
 	yield takeLatest(FETCH_PROPERTYLIST, fetchPropertiesWatcher);
 	yield takeLatest(FETCH_USER_PROPERTIES, fetchUserPropertiesWatcher);
 	yield takeLatest(FETCH_PROPERTY, fetchPropertyWatcher);
+	yield takeLatest(USER_REGISTER, userRegisterWatcher);
 }

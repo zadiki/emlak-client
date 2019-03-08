@@ -8,8 +8,7 @@ import './style/main.css';
 import store from './Store';
 import setAuthorizationHeader from './utils/setAuthorizationHeader';
 import apis from './utils/apis';
-import { loginSuccess } from './sagas/dispatchers/userdispatcher';
-import { LOGIN_SUCCESS } from './actions/types';
+import { LOGIN_SUCCESS, LOGOUT_REQUEST } from './actions/types';
 
 if (localStorage.emlakJWT) {
 	setAuthorizationHeader(localStorage.emlakJWT);
@@ -17,12 +16,13 @@ if (localStorage.emlakJWT) {
 		.fetchUserData()
 		.then(data => {
 			store.dispatch({ type: LOGIN_SUCCESS, payload: data });
-			loginSuccess(data);
 		})
-		.catch(err => console.log(err.response.data));
+		.catch(err => {
+			store.dispatch({ type: LOGOUT_REQUEST });
+		});
 } else {
 	setAuthorizationHeader();
-	// store.dispatch(userlogout());
+	store.dispatch({ type: LOGOUT_REQUEST });
 }
 
 ReactDOM.render(<App />, document.getElementById('root'));
