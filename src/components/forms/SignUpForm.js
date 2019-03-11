@@ -34,11 +34,13 @@ class SignUpForm extends Component{
       e.preventDefault();
       const { userRegistration } = this.props;
       const errorsObj= this.validation();
-      console.log('validation state',this.state);
+      this.setState({
+        errors:{}
+      });
+      
       if(isObjEmpty(errorsObj)){
         userRegistration(this.state);
       }else{
-        console.log('validation errors',errorsObj);
         this.setState({
           errors:errorsObj
         });
@@ -65,11 +67,21 @@ class SignUpForm extends Component{
   render(){
     const { onSubmit,onChange}=this;
     const { errors }=this.state;
+    const {errorArray,registerSuccess}=this.props;
+    console.log(errorArray)
     return(
       <div style={{ marginTop: '-2em' }}>
       <div className="inner-sm">
+ 
         <form onSubmit={onSubmit} className="login-form">
           <div className="card card-default">
+          {
+            registerSuccess.length>0 && <div className="alert alert-primary" role="alert">{registerSuccess}</div>
+          }
+           {
+            errorArray.length>0 && <div className="alert alert-danger" role="alert">{errorArray.map(error=>error.msg)}</div>
+          }
+          
             <div className="card-body">
               <div className="form-group">
                 <input
@@ -193,9 +205,15 @@ class SignUpForm extends Component{
 }
 
 SignUpForm.propTypes = {
-  userRegistration: PropTypes.func.isRequired
+  userRegistration: PropTypes.func.isRequired,
+  errorArray:PropTypes.arrayOf(PropTypes.shape()).isRequired,
+  registerSuccess:PropTypes.string.isRequired
 };
+const mapStatetoProps = state => ({
+  errorArray: state.errors.error,
+  registerSuccess: state.user.registerSuccess
+});
 export default connect(
-	null,
+mapStatetoProps,
 	{ userRegistration: registerUser }
 )(SignUpForm);

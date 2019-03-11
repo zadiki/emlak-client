@@ -7,6 +7,7 @@ import {
 
 const initState = {
 	isAuthenticated: false,
+	registerSuccess: '',
 	isLoading: true,
 	user: {}
 };
@@ -25,7 +26,7 @@ export default function user(state = initState, action) {
 		case USER_REGISTER_SUCCESS:
 			return {
 				...state,
-				registrationMessage: action.payload,
+				registerSuccess: action.payload.msg,
 				registration: true
 			};
 		case USER_REGISTER_FAIL:

@@ -3,7 +3,8 @@ import {
 	loginSuccess,
 	loginFail,
 	logout,
-	userRegistrationSuccess
+	userRegistrationSuccess,
+	userRegistrationFail
 } from '../dispatchers/userdispatcher';
 import apis from '../../utils/apis';
 
@@ -27,6 +28,10 @@ export function* userRegisterWatcher(action) {
 		const response = yield call(apis.user.registerUser, action.payload);
 		yield call(userRegistrationSuccess, response.data);
 	} catch (error) {
-		console.log(error.response.data);
+		if (error.response.status == 401) {
+			yield call(userRegistrationFail, error.response.data);
+		} else {
+			yield call(userRegistrationFail, [{ msg: 'error saving user' }]);
+		}
 	}
 }
