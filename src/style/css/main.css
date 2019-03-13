@@ -202,9 +202,7 @@ a:hover {
   bottom: 0;
   right: 0;
 }
-.has-errors{
-  background-color: crimson;
-}
+
 .loading:before {
   content: "";
   display: block;
@@ -316,17 +314,4 @@ a:hover {
     -o-transform: rotate(360deg);
     transform: rotate(360deg);
   }
-}
-
-.street-view-size {
-  min-width: 28em;
-  min-height: 28em;
-}
-
-.gmnoprint img {
-  max-width: none;
-}
-
-.visibility-hidden {
-  visibility: hidden;
 }

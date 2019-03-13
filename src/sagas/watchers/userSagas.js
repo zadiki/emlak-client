@@ -35,3 +35,7 @@ export function* userRegisterWatcher(action) {
 		}
 	}
 }
+
+export function* userEmailConfirm(action) {
+	console.log(action.payload);
+}

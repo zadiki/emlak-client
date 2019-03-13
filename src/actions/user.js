@@ -1,4 +1,9 @@
-import { LOGIN_REQUEST, LOGOUT_REQUEST, USER_REGISTER } from './types';
+import {
+	LOGIN_REQUEST,
+	LOGOUT_REQUEST,
+	USER_REGISTER,
+	EMAIL_CONFIRM
+} from './types';
 
 export const login = credentials => ({
 	type: LOGIN_REQUEST,
@@ -11,3 +16,5 @@ export const registerUser = user => ({
 	type: USER_REGISTER,
 	payload: user
 });
+
+export const emailConfirm = token => ({ type: EMAIL_CONFIRM, payload: token });

@@ -12,6 +12,8 @@ import SignUpPage from '../components/pages/SignUpPage';
 import Home from '../components/pages/Home';
 import Property from '../components/pages/Property';
 import UserProperties from '../components/pages/UserProperties';
+import PasswordConfirmRouter from './PasswordConfirmRouter';
+import PasswordConfirm from '../components/pages/PasswordConfirm';
 
 const Router = ({ location }) => (
 	<Fragment>
@@ -20,6 +22,12 @@ const Router = ({ location }) => (
 			location={location}
 			path="/login"
 			component={LoginPage}
+		/>
+		<PasswordConfirmRouter
+			exact
+			location={location}
+			path="/emailconfirmation/:token"
+			component={PasswordConfirm}
 		/>
 		<HomeRouter exact location={location} path="/" component={Home} />
 		<SignUpRouter
