@@ -4,7 +4,6 @@ import TopNavBar from '../navigation/TopNavBar';
 
 const SignUpPage = () => (
 	<Fragment>
-		<TopNavBar />
 		<SignUpForm />
 	</Fragment>
 );

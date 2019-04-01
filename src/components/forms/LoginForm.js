@@ -8,9 +8,9 @@ const LoginForm = ({ onChange, onSubmit }) => (
 			className="container-login100"
 			style={{ backgroundImage: 'url(\'images/bg-01.jpg\')' }}
 		>
-			<div className="wrap-login100 p-l-55 p-r-55 p-t-12 p-b-12">
+			<div className="wrap-login100">
 				<form onSubmit={onSubmit} className="login100-form validate-form">
-					<span className="login100-form-title p-b-49">Login</span>
+					<span className="login100-form-title p-b-40">Login</span>
 					<div
 						className="wrap-input100 validate-input m-b-23"
 						data-validate="Username is required"
@@ -41,7 +41,7 @@ const LoginForm = ({ onChange, onSubmit }) => (
 						<span className="focus-input100" data-symbol="&#xf190;" />
 					</div>
 
-					<div className="text-right p-t-8 p-b-31">
+					<div className="text-right p-t-6 p-b-25">
 						<a href="/">Forgot password?</a>
 					</div>
 					<div className="container-login100-form-btn">
@@ -52,7 +52,7 @@ const LoginForm = ({ onChange, onSubmit }) => (
 							</button>
 						</div>
 					</div>
-					<div className="txt1 text-center p-t-12 p-b-15">
+					<div className="txt1 text-center p-t-1">
 						<span>Or Sign Up Using</span>
 					</div>
 
@@ -69,7 +69,7 @@ const LoginForm = ({ onChange, onSubmit }) => (
 							<i className="fa fa-google" />
 						</a>
 					</div>
-					<div className="container-login100-form-btn p-t-12">
+					<div className="container-login100-form-btn">
 						<div className="wrap-login100-form-btn">
 							<div className="withoutaccount100-bgbtn" />
 							<a href="/" className="login100-form-btn">

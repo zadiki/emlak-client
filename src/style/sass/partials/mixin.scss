@@ -1,0 +1,28 @@
+@mixin boxShadow($property) {
+	-moz-box-shadow: $property;
+	-webkit-box-shadow: $property;
+	-o-box-shadow: $property;
+	-ms-box-shadow: $property;
+	box-shadow: $property;
+}
+
+@mixin placeholder {
+	::-webkit-input-placeholder {
+		@content;
+	}
+	:-moz-placeholder {
+		@content;
+	}
+	::-moz-placeholder {
+		@content;
+	}
+	:-ms-input-placeholder {
+		@content;
+	}
+}
+
+@mixin Desktop {
+	@media (min-width:#{$tablet}) {
+		@content;
+	}
+}
