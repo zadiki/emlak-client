@@ -80,8 +80,8 @@ class TopNavBar extends Component {
       return (
         <Fragment>
           <NavItem className="active">
-            <NavLink className="float-left" href="/">SignUp</NavLink>
-            <NavLink className="float-right" href="/">Login</NavLink>
+            <NavLink className="float-left" href="/signup">SignUp</NavLink>
+            <NavLink className="float-right" href="/login">Login</NavLink>
           </NavItem>
         </Fragment>
       );
@@ -91,7 +91,7 @@ class TopNavBar extends Component {
         <div className="container">
           <NavbarBrand href="/">
             <img
-              src="images/company/logo.jpg"
+              src="/images/company/logo.jpg"
               width="30"
               height="30"
               className="d-inline-block"
