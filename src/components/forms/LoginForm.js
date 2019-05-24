@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import '../../style/css/login.css';
 
 const LoginForm = ({ onChange, onSubmit }) => (
 	<div className="limiter">

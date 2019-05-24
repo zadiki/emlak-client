@@ -6,7 +6,6 @@ import * as serviceWorker from './serviceWorker';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './style/fonts/font-awesome-4.7.0/css/font-awesome.min.css';
 import './style/fonts/iconic/css/material-design-iconic-font.min.css';
-import './style/css/login.css';
 import './style/css/main.css';
 import store from './Store';
 import setAuthorizationHeader from './utils/setAuthorizationHeader';

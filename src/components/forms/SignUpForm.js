@@ -69,13 +69,14 @@ class SignUpForm extends Component{
     const { onSubmit,onChange}=this;
     const { errors }=this.state;
     const {errorArray,registerSuccess}=this.props;
+
     return(
-       <div className="limiter" style={{backgroundColor:'#e2a3a3',alignContent:'centre'}}>
-            <div className="container-login100">
-            <div className="login100-more">
-            <div className="wrap-login100 p-l-50 p-r-50 p-t-72 p-b-50">
-              <form onSubmit={onSubmit} className="login100-form validate-form">
-              <span className="login100-form-title p-b-59">
+       <div>
+            <div>
+            <div>
+            <div className="signup-wrapper">
+              <form onSubmit={onSubmit}>
+              <span className="signup-form-title">
                   Sign Up
                 </span>
                 {

@@ -1,0 +1,19 @@
+@import "variable";
+@import "mixin";
+@import "global";
+@import "login";
+
+.signup-wrapper {
+	background: #fff;
+	border-radius: 10px;
+	overflow: hidden;
+}
+.signup-form-title {
+	display: block;
+	font-family: Poppins-Bold;
+	font-size: 15px;
+	color: #1b1414;
+	line-height: 1;
+	text-align: center;
+	@extend .p-t-22;
+}
