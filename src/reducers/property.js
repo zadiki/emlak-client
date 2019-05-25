@@ -26,7 +26,6 @@ export default function property(state = initState, action) {
 		case POST_PROPERTY:
 			return { ...state, isLoading: false };
 		case FETCH_PROPERTY_SUCCESS:
-			console.log('property ', action.payload);
 			return { ...state, property: action.payload };
 		default:
 			return state;

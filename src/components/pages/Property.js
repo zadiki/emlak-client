@@ -57,7 +57,6 @@ class Property extends Component {
 		const { property } = this.props;
 
 		if (Object.keys(property).length < 1) {
-			console.log('test', property);
 			return null;
 		}
 		const { tabdisplay } = this.state;
