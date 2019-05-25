@@ -28,6 +28,7 @@ export function* fetchUserPropertiesWatcher(action) {
 export function* fetchPropertyWatcher(action) {
 	try {
 		const data = yield call(apis.property.fetchPropertyDetail, action.payload);
+		console.log('api data', data);
 		yield call(propertyloadSuccess, data);
 	} catch (error) {
 		yield call(propertiesloadFailure, error.response.data);
